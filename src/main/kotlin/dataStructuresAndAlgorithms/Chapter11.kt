@@ -8,7 +8,10 @@ private fun main() {
     println(evenNumbers.toString())
 
     val triangulatedNumbers = triangulateNumbers(nthNumber = 7)
-    print(triangulatedNumbers.toString())
+    println(triangulatedNumbers.toString())
+
+    val customIndex = customIndexOf("abcdefghijklmnopqrstuvwxyz")
+    println(customIndex.toString())
 }
 
 /* Use recursion to return the total number of characters.
@@ -99,5 +102,23 @@ private fun triangulateNumbers(
         nextValue
     } else {
         triangulateNumbers(nthNumber - 1, listOfTriangulatedNumbers)
+    }
+}
+
+/* Use recursion to return the first index that contains 'x' from a given string.
+ * Input: "abcdefghijklmnopqrstuvwxyz"
+ * Output: 23
+ * 1. Imagine the function already exists.
+ * 2. Identify the base case: ""
+ * 3. Identify the sub-problem: "bcdefghijklmnopqrstuvwxyz"
+ * 4. See what happens when we call the function with the sub-problem.
+ */
+private fun customIndexOf(input: String, currentIndex: Int = 0): Int {
+    return if (input.isEmpty()) {
+        currentIndex
+    } else if (input[0].toString().equals("x", true)) {
+        currentIndex
+    } else {
+        customIndexOf(input = input.substring(1), currentIndex = currentIndex + 1)
     }
 }
