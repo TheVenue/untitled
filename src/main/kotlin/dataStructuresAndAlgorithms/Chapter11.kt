@@ -122,3 +122,15 @@ private fun customIndexOf(input: String, currentIndex: Int = 0): Int {
         customIndexOf(input = input.substring(1), currentIndex = currentIndex + 1)
     }
 }
+
+/* Given a grid of number of rows and columns.
+ * Calculate the number of possible "shortest" paths
+ * from the upper leftmost square to the bottom rightmost square.
+ * For example: [S][][][][][][]
+ *              [][][][ ][][][]
+ *              [][][][][][][F]
+ * Return:
+ */
+private fun uniquePaths(rows: Int, columns: Int) : Int {
+    return -1
+}
