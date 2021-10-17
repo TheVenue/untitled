@@ -9,7 +9,7 @@ fun main() {
  * Input: "abcde"
  * Output: "edcba"
  */
-private fun reverseString(input: String) : String {
+private fun reverseString(input: String): String {
     val stack = Stack(input)
     val reversedString = StringBuilder()
     while (stack.read() != null) {
@@ -35,7 +35,8 @@ class Stack(private val input: String) {
         val lastCharacter = read()
         try {
             charactersInString.removeLast()
-        } catch (nsee: NoSuchElementException) { }
+        } catch (nsee: NoSuchElementException) {
+        }
         return lastCharacter
     }
 
@@ -43,11 +44,7 @@ class Stack(private val input: String) {
         return if (charactersInString.isEmpty()) {
             null
         } else {
-            return try {
-                charactersInString.last()
-            } catch (nsee: NoSuchElementException) {
-                null
-            }
+            charactersInString.last()
         }
     }
 }
