@@ -22,11 +22,11 @@ fun main() {
  * Output: 1, 2, 3, 4, 5, 6, 7, 8
  */
 private fun printListOf(tree: MutableList<*>) {
-    tree.forEach {
-        if (it is MutableList<*>) {
-            printListOf(it)
+    tree.forEach { child ->
+        if (child is MutableList<*>) {
+            printListOf(child)
         } else {
-            println(it.toString())
+            println(child.toString())
         }
     }
 }
