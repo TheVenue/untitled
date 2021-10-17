@@ -123,9 +123,9 @@ private fun customIndexOf(input: String, currentIndex: Int = 0): Int {
     }
 }
 
-/* Given a grid of number of rows and columns.
- * Calculate the number of possible "shortest" paths
- * from the upper leftmost square to the bottom rightmost square.
+/* Given a grid represented by a number of rows and columns.
+ * Calculate the number of possible "shortest" paths from
+ * the upper leftmost square to the bottom rightmost square.
  * For example: [S][][][][][][]
  *              [][][][ ][][][]
  *              [][][][][][][F]
