@@ -12,8 +12,9 @@ private fun main() {
  * Input: ["ab", "c", "def", "ghij"]
  * Output: 10
  * 1. Imagine the function exists.
- * 2. Identify the base case: []
- * 3. See what happens when we call the function on the sub-problem.
+ * 2. Identify the base case: [], 0
+ * 3. Identify the sub-problem: ["ab", "c", "def"], 4 *because subList(0, list.size - 1)
+ * 5. See what happens when we call the function on the sub-problem.
  *
  * WALK THROUGH
  * ["ab", "c", "def", "ghij"], 0
@@ -48,8 +49,9 @@ private fun countCharacters(listOfStrings: MutableList<String>, count: Int = 0):
  * Input: [9, 2, 4, 7, 4, 2, 9, 3]
  * Output: [2, 4, 4, 2]
  * 1. Imagine the function exists.
- * 2. Identify the base case: []
- * 3. See what happens when we call the function on the sub-problem.
+ * 2. Identify the base case: [], []
+ * 3. Identify the sub-problem: [9, 2, 4, 7, 4, 2, 9], [] *because list.subList(0, list.size - 1) && 3 % 2 == 1
+ * 4. See what happens when we call the function on the sub-problem.
  */
 private fun findEvenNumbers(
     listOfNumbers: MutableList<Int>,
