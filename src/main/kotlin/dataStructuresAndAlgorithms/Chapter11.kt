@@ -69,3 +69,22 @@ private fun findEvenNumbers(
         )
     }
 }
+
+/* Return the triangular value of a given number
+ * The pattern begins [1, 3, 6, 10, 15, 21] and continues onward til N
+ * The appending value is the list(index) + (list.size + 1)
+ * Input: 7, []
+ * Output: 28
+ *
+ * 1. Imagine the function already exists.
+ * 2. Identify the base case: 0, []
+ * 3. Identify the sub-problem: [1, 3, 6, 10, 15]
+ * 4. See what happens when we call the function on the sub-problem.
+ */
+private fun triangulateNumbers(nthNumber: Int, currentValue: Int = 0) : Int {
+    return if (nthNumber == 0) {
+        0
+    } else {
+        -1
+    }
+}

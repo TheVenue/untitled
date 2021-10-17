@@ -33,9 +33,8 @@ class Stack(private val input: String) {
 
     fun pop(): Char? {
         val lastCharacter = read()
-        try {
+        if (charactersInString.isNotEmpty()) {
             charactersInString.removeLast()
-        } catch (nsee: NoSuchElementException) {
         }
         return lastCharacter
     }
