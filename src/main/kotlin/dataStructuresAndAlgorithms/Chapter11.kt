@@ -14,7 +14,7 @@ private fun main() {
  * 1. Imagine the function exists.
  * 2. Identify the base case: [], 0
  * 3. Identify the sub-problem: ["ab", "c", "def"], 4 *because subList(0, list.size - 1)
- * 5. See what happens when we call the function on the sub-problem.
+ * 4. See what happens when we call the function on the sub-problem.
  *
  * WALK THROUGH
  * ["ab", "c", "def", "ghij"], 0
