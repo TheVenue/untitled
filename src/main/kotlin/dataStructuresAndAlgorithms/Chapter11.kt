@@ -83,7 +83,7 @@ private fun findEvenNumbers(
  */
 private fun triangulateNumbers(nthNumber: Int, currentValue: Int = 0) : Int {
     return if (nthNumber == 0) {
-        0
+        currentValue
     } else {
         -1
     }
