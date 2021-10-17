@@ -6,6 +6,9 @@ private fun main() {
 
     val evenNumbers = findEvenNumbers(mutableListOf(9, 2, 4, 7, 4, 2, 9, 3))
     println(evenNumbers.toString())
+
+    val triangulatedNumbers = triangulateNumbers(nthNumber = 7)
+    print(triangulatedNumbers.toString())
 }
 
 /* Use recursion to return the total number of characters.
@@ -72,19 +75,29 @@ private fun findEvenNumbers(
 
 /* Return the triangular value of a given number
  * The pattern begins [1, 3, 6, 10, 15, 21] and continues onward til N
- * The appending value is the list(index) + (list.size + 1)
+ * The appending value is the list.last() + (list.size + 1)
  * Input: 7, []
  * Output: 28
  *
  * 1. Imagine the function already exists.
  * 2. Identify the base case: 0, []
  * 3. Identify the sub-problem: [1, 3, 6, 10, 15]
+ *    nextValue = (list.size + 1) + list.last()
  * 4. See what happens when we call the function on the sub-problem.
  */
-private fun triangulateNumbers(nthNumber: Int, currentValue: Int = 0) : Int {
+private fun triangulateNumbers(
+    nthNumber: Int,
+    listOfTriangulatedNumbers: MutableList<Int> = mutableListOf()
+): Int {
+    val nextValue = listOfTriangulatedNumbers.getOrNull(listOfTriangulatedNumbers.size - 1)?.let {
+        it + listOfTriangulatedNumbers.size
+    } ?: run {
+        0
+    }
+    listOfTriangulatedNumbers.add(nextValue)
     return if (nthNumber == 0) {
-        currentValue
+        nextValue
     } else {
-        -1
+        triangulateNumbers(nthNumber - 1, listOfTriangulatedNumbers)
     }
 }
