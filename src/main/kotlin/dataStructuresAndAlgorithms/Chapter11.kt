@@ -82,7 +82,7 @@ private fun findEvenNumbers(
  * 1. Imagine the function already exists.
  * 2. Identify the base case: 0, []
  * 3. Identify the sub-problem: [1, 3, 6, 10, 15]
- *    nextValue = (list.size + 1) + list.last()
+ *    nextValue = list.last() + list.size
  * 4. See what happens when we call the function on the sub-problem.
  */
 private fun triangulateNumbers(
