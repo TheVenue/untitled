@@ -115,7 +115,7 @@ private fun triangulateNumbers(
  */
 private fun customIndexOf(input: String, currentIndex: Int = 0): Int {
     return if (input.isEmpty()) {
-        currentIndex
+        -1
     } else if (input[0].toString().equals("x", true)) {
         currentIndex
     } else {
@@ -131,6 +131,6 @@ private fun customIndexOf(input: String, currentIndex: Int = 0): Int {
  *              [][][][][][][F]
  * Return:
  */
-private fun uniquePaths(rows: Int, columns: Int) : Int {
+private fun uniquePaths(rows: Int, columns: Int): Int {
     return -1
 }
