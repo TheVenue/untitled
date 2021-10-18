@@ -19,7 +19,7 @@ private fun reverseString(input: String): String {
 }
 
 private class Stack(private val input: String) {
-    private val charactersInString = mutableListOf<Char>()
+    private val listOfCharacters = mutableListOf<Char>()
 
     init {
         for (char in input) {
@@ -28,22 +28,22 @@ private class Stack(private val input: String) {
     }
 
     private fun push(char: Char) {
-        charactersInString.add(char)
+        listOfCharacters.add(char)
     }
 
     fun pop(): Char? {
         val lastCharacter = read()
-        if (charactersInString.isNotEmpty()) {
-            charactersInString.removeLast()
+        if (listOfCharacters.isNotEmpty()) {
+            listOfCharacters.removeLast()
         }
         return lastCharacter
     }
 
     fun read(): Char? {
-        return if (charactersInString.isEmpty()) {
+        return if (listOfCharacters.isEmpty()) {
             null
         } else {
-            charactersInString.last()
+            listOfCharacters.last()
         }
     }
 }
