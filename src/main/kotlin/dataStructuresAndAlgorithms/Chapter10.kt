@@ -1,6 +1,6 @@
 package dataStructuresAndAlgorithms
 
-fun main() {
+private fun main() {
     val tree = mutableListOf(1, 2, 3,
                             mutableListOf(4, 5, 6), 7,
                             mutableListOf(8),

@@ -1,6 +1,6 @@
 package dataStructuresAndAlgorithms
 
-fun main() {
+private fun main() {
     val reversedInput = reverseString("abcde")
     println(reversedInput)
 }
@@ -18,7 +18,7 @@ private fun reverseString(input: String): String {
     return reversedString.toString()
 }
 
-class Stack(private val input: String) {
+private class Stack(private val input: String) {
     private val charactersInString = mutableListOf<Char>()
 
     init {

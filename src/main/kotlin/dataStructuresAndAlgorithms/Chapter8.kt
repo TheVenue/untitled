@@ -1,6 +1,6 @@
 package dataStructuresAndAlgorithms
 
-fun main() {
+private fun main() {
     val intersectedArray = intersection(mutableListOf(0, 2, 4, 6, 8, 1, 3, 23, 100, 20, 30, 80, 90), mutableListOf(1, 2, 3, 4))
     println(intersectedArray)
 
