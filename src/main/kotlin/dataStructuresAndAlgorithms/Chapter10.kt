@@ -10,6 +10,7 @@ private fun main() {
 
     printListOf(tree)
 }
+
 /* Return a list of values from an array containing
  * numbers as well as other arrays, which in turn contains
  * numbers and arrays.
