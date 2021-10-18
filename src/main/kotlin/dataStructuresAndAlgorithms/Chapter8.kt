@@ -14,7 +14,7 @@ private fun main() {
     println(uniqueCharacter)
 }
 
-/* Return the dataStructuresAndAlgorithms.intersection of two given arrays
+/* Return the intersection of two given arrays
  * input [1, 2, 3, 4, 5] [0, 2, 4, 6, 8]
  * output [2, 4]
  * Must be O(N)
@@ -41,12 +41,12 @@ private fun intersection(listOne: MutableList<Int>, listTwo: MutableList<Int>) :
  * Must be O(N)
  */
 private fun checkForDuplicates(listOfCharacters: MutableList<String>) : String {
-    val hashTableOfExistingNames = mutableMapOf<String, Boolean>()
+    val hashTableOfExistingCharacters = mutableMapOf<String, Boolean>()
     for (character in listOfCharacters) {
-        if (hashTableOfExistingNames[character] == true) {
+        if (hashTableOfExistingCharacters[character] == true) {
             return character
         } else {
-            hashTableOfExistingNames[character] = true
+            hashTableOfExistingCharacters[character] = true
         }
     }
     return "No Duplicates"
