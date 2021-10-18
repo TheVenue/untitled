@@ -12,6 +12,9 @@ private fun main() {
 
     val customIndex = customIndexOf("abcdefghijklmnopqrstuvwxyz")
     println(customIndex.toString())
+
+    val uniquePaths = uniquePaths(7,3)
+    println(uniquePaths.toString())
 }
 
 /* Use recursion to return the total number of characters.
@@ -129,8 +132,19 @@ private fun customIndexOf(input: String, currentIndex: Int = 0): Int {
  * For example: [S][][][][][][]
  *              [][][][ ][][][]
  *              [][][][][][][F]
- * Return:
+ *
+ * 1. Imagine the function already exists.
+ * 2. Identify the base case: 0, 0
+ * 3. Identify the sub-problem: [S][][][][][]
+ *                              [][][][][][F]
+ *                                   or
+ *                                  6,2
+ * 4. See what happens when we call the function on our sub-problem.
  */
 private fun uniquePaths(rows: Int, columns: Int): Int {
-    return -1
+    return if (rows == 1 || columns == 1) {
+        1
+    } else {
+        uniquePaths(rows - 1, columns) + uniquePaths(rows, columns - 1)
+    }
 }
