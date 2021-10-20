@@ -139,21 +139,35 @@ private fun selectionSort(listOfNumbers: MutableList<Int>) {
  * (2, 4, 5, 6, 7, 7, 3, 7, 6, 9)
  * (2, 4, 5, 6, 6, 7, 3, 7, 6, 9)
  * index = 6
+ *
+ * Data: traversingEndIndex (TEI), currentValue (CV), and comparingLeftIndex (CLI)
+ *
+ * Initialization:
+ * TEI = 1
+ * while 1 > list.size, so if the list is 1, it is already sorted and we don't sort.
+ *
+ * Loop for every step forward:
+ * CV = value at TEI
+ * CLI = begins immediately left at TEI
+ * Inner loop beginning at CLI:
+ * if CLI is greater than our CV we change the CLI + 1 to CLI
+ * we then decrement CLI
+ * we then set CLI plus one to the CV
  */
 private fun insertionSort(listOfNumbers: MutableList<Int>) {
     var traversingEndIndex = 1
     while (traversingEndIndex < listOfNumbers.size) {
-        val tempValue = listOfNumbers[traversingEndIndex]
+        val currentValue = listOfNumbers[traversingEndIndex]
         var comparingLeftIndex = traversingEndIndex - 1
 
         while (comparingLeftIndex >= 0) {
-            if (listOfNumbers[comparingLeftIndex] > tempValue) {
+            if (listOfNumbers[comparingLeftIndex] > currentValue) {
                 listOfNumbers[comparingLeftIndex + 1] = listOfNumbers[comparingLeftIndex]
                 comparingLeftIndex -= 1
             } else {
                 break
             }
-            listOfNumbers[comparingLeftIndex + 1] = tempValue
+            listOfNumbers[comparingLeftIndex + 1] = currentValue
         }
         traversingEndIndex++
     }
