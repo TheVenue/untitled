@@ -21,9 +21,9 @@ private fun bubbleSort(listOfNumbers: MutableList<Int>) : MutableList<Int> {
         var i = 0
         while (i < unsortedUntilIndex) {
             listOfNumbers.getOrNull(i)?.let { startValue ->
-                listOfNumbers.getOrNull(i + 1)?.let { swapValue ->
-                    if (swapValue < startValue) {
-                        listOfNumbers[i] = swapValue
+                listOfNumbers.getOrNull(i + 1)?.let { nextValue ->
+                    if (nextValue < startValue) {
+                        listOfNumbers[i] = nextValue
                         listOfNumbers[i + 1] = startValue
                         sorted = false
                     }
