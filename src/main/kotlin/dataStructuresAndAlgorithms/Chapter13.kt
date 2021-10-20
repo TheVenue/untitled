@@ -74,6 +74,71 @@ private fun selectionSort(listOfNumbers: MutableList<Int>) {
 
 /**
  * Time Complexity of O(n²)
+
+ * mutableListOf(4, 6, 2, 5, 7, 6, 3, 7, 6, 9)
+ * index = 1
+ * tempValue = 6
+ * position = 0
+
+
+ * if 4 > 6
+ * break
+ * index = 2
+
+
+ * tempValue = 2
+ * position = 1
+ * if 6 > 2
+ * list[2] = list[1] (4, 6, 2, 5, 7, 6, 3, 7, 6, 9)
+ *                   (4, 6, 6, 5, 7, 6, 3, 7, 6, 9)
+ *                   position = 0
+ * list[1] = 2      (4, 6, 6, 5, 7, 6, 3, 7, 6, 9)
+ *                  (4, 2, 6, 5, 7, 6, 3, 7, 6, 9)
+ *
+ * if (4 > 2)
+ * list[1] = list[0] (4, 2, 6, 5, 7, 6, 3, 7, 6, 9)
+ *                   (4, 4, 6, 5, 7, 6, 3, 7, 6, 9)
+ *                   position = -1
+ * list[0] = 2       (4, 4, 6, 5, 7, 6, 3, 7, 6, 9)
+ *                   (2, 4, 6, 5, 7, 6, 3, 7, 6, 9)
+ * index = 3
+
+
+ * tempValue = 5
+ * position = 2
+ *
+ * if 6 > 5
+ * list[3] = list[2]    (2, 4, 6, 5, 7, 6, 3, 7, 6, 9)
+ *                      (2, 4, 6, 6, 7, 6, 3, 7, 6, 9)
+ *                      position = 1
+ * list[2] = 5          (2, 4, 6, 6, 7, 6, 3, 7, 6, 9)
+ *                      (2, 4, 5, 6, 7, 6, 3, 7, 6, 9)
+ *
+ * while 1 > 0
+ * if 4 > 5
+ * break
+ * index = 4
+
+
+ * tempValue = 7
+ * position = 3
+ * if 6 > 7
+ * break
+ * index = 5
+
+
+ * tempValue = 6
+ * position = 4
+ * if 7 > 6
+ * list[5] = list[4]
+ * (2, 4, 5, 6, 7, 6, 3, 7, 6, 9)
+ * (2, 4, 5, 6, 7, 7, 3, 7, 6, 9)
+ * position = 3
+ * end if
+ * list[4] = 6
+ * (2, 4, 5, 6, 7, 7, 3, 7, 6, 9)
+ * (2, 4, 5, 6, 6, 7, 3, 7, 6, 9)
+ * index = 6
  */
 private fun insertionSort(listOfNumbers: MutableList<Int>) {
     var index = 1
