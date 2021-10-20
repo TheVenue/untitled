@@ -40,26 +40,28 @@ private fun main() {
  * ........continue til 9
  */
 private fun bubbleSortAndReturnGreatestProduct(listOfNumbers: MutableList<Int>): Int {
-    var unsortedUntilIndex = listOfNumbers.size - 1
-    var sorted = false
+//    var unsortedUntilIndex = listOfNumbers.size - 1
+//    var sorted = false
+//
+//    while (!sorted) {
+//        sorted = true
+//        var i = 0
+//        while (i < unsortedUntilIndex) {
+//            listOfNumbers.getOrNull(i)?.let { startValue ->
+//                listOfNumbers.getOrNull(i + 1)?.let { swapValue ->
+//                    if (swapValue < startValue) {
+//                        listOfNumbers[i] = swapValue
+//                        listOfNumbers[i + 1] = startValue
+//                        sorted = false
+//                    }
+//                }
+//            }
+//            i++
+//        }
+//        unsortedUntilIndex -= 1
+//    }
 
-    while (!sorted) {
-        sorted = true
-        var i = 0
-        while (i < unsortedUntilIndex) {
-            listOfNumbers.getOrNull(i)?.let { startValue ->
-                listOfNumbers.getOrNull(i + 1)?.let { swapValue ->
-                    if (swapValue < startValue) {
-                        listOfNumbers[i] = swapValue
-                        listOfNumbers[i + 1] = startValue
-                        sorted = false
-                    }
-                }
-            }
-            i++
-        }
-        unsortedUntilIndex -= 1
-    }
+    listOfNumbers.sort()
 
     val thirdLargest = listOfNumbers.getOrNull(listOfNumbers.size - 3) ?: 1
     val secondLargest = listOfNumbers.getOrNull(listOfNumbers.size - 2) ?: 1
