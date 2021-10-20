@@ -20,6 +20,9 @@ private fun sortAndReturnGreatestProduct(listOfNumbers: MutableList<Int>): Int {
     return largest * secondLargest * thirdLargest
 }
 
+/**
+ * Time Complexity of O(N²)
+ */
 private fun bubbleSort(listOfNumbers: MutableList<Int>) {
     var unsortedUntilIndex = listOfNumbers.size - 1
     var sorted = false
@@ -42,6 +45,9 @@ private fun bubbleSort(listOfNumbers: MutableList<Int>) {
     }
 }
 
+/**
+ * Time Complexity of O(N²)
+ */
 private fun selectionSort(listOfNumbers: MutableList<Int>) {
     listOfNumbers.forEachIndexed { i, _ ->
         var lowestNumberIndex = i
@@ -62,3 +68,9 @@ private fun selectionSort(listOfNumbers: MutableList<Int>) {
     }
 }
 
+/**
+ * Time Complexity of O(n²)
+ */
+private fun insertionSort(listOfNumbers: MutableList<Int>) {
+
+}
