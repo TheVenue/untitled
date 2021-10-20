@@ -144,16 +144,16 @@ private fun insertionSort(listOfNumbers: MutableList<Int>) {
     var traversingEndIndex = 1
     while (traversingEndIndex < listOfNumbers.size) {
         val tempValue = listOfNumbers[traversingEndIndex]
-        var comparingLeftPosition = traversingEndIndex - 1
+        var comparingLeftIndex = traversingEndIndex - 1
 
-        while (comparingLeftPosition >= 0) {
-            if (listOfNumbers[comparingLeftPosition] > tempValue) {
-                listOfNumbers[comparingLeftPosition + 1] = listOfNumbers[comparingLeftPosition]
-                comparingLeftPosition -= 1
+        while (comparingLeftIndex >= 0) {
+            if (listOfNumbers[comparingLeftIndex] > tempValue) {
+                listOfNumbers[comparingLeftIndex + 1] = listOfNumbers[comparingLeftIndex]
+                comparingLeftIndex -= 1
             } else {
                 break
             }
-            listOfNumbers[comparingLeftPosition + 1] = tempValue
+            listOfNumbers[comparingLeftIndex + 1] = tempValue
         }
         traversingEndIndex++
     }
