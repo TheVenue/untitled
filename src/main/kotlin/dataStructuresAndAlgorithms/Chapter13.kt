@@ -49,7 +49,7 @@ private fun bubbleSortAndReturnGreatestProduct(listOfNumbers: MutableList<Int>):
         while (i < unsortedUntilIndex) {
             listOfNumbers.getOrNull(i)?.let { startValue ->
                 listOfNumbers.getOrNull(i + 1)?.let { swapValue ->
-                    if (startValue > swapValue) {
+                    if (swapValue < startValue) {
                         listOfNumbers[i] = swapValue
                         listOfNumbers[i + 1] = startValue
                         sorted = false
