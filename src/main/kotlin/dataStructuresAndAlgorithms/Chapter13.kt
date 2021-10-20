@@ -10,6 +10,10 @@ private fun main() {
     val selectionSortedList = mutableListOf(4, 6, 2, 5, 7, 6, 3, 7, 6, 9)
     selectionSort(selectionSortedList)
     println(selectionSortedList)
+
+    val insertionSortedList = mutableListOf(4, 6, 2, 5, 7, 6, 3, 7, 6, 9)
+    insertionSort(insertionSortedList)
+    println(insertionSortedList)
 }
 
 private fun sortAndReturnGreatestProduct(listOfNumbers: MutableList<Int>): Int {
@@ -72,5 +76,20 @@ private fun selectionSort(listOfNumbers: MutableList<Int>) {
  * Time Complexity of O(n²)
  */
 private fun insertionSort(listOfNumbers: MutableList<Int>) {
+    var index = 1
+    while (index < listOfNumbers.size) {
+        val tempValue = listOfNumbers[index]
+        var position = index - 1
 
+        while (position >= 0) {
+            if (listOfNumbers[position] > tempValue) {
+                listOfNumbers[position + 1] = listOfNumbers[position]
+                position -= 1
+            } else {
+                break
+            }
+            listOfNumbers[position + 1] = tempValue
+        }
+        index++
+    }
 }
