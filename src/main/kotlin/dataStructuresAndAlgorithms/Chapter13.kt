@@ -141,20 +141,20 @@ private fun selectionSort(listOfNumbers: MutableList<Int>) {
  * index = 6
  */
 private fun insertionSort(listOfNumbers: MutableList<Int>) {
-    var index = 1
-    while (index < listOfNumbers.size) {
-        val tempValue = listOfNumbers[index]
-        var position = index - 1
+    var traversingEndIndex = 1
+    while (traversingEndIndex < listOfNumbers.size) {
+        val tempValue = listOfNumbers[traversingEndIndex]
+        var comparingLeftPosition = traversingEndIndex - 1
 
-        while (position >= 0) {
-            if (listOfNumbers[position] > tempValue) {
-                listOfNumbers[position + 1] = listOfNumbers[position]
-                position -= 1
+        while (comparingLeftPosition >= 0) {
+            if (listOfNumbers[comparingLeftPosition] > tempValue) {
+                listOfNumbers[comparingLeftPosition + 1] = listOfNumbers[comparingLeftPosition]
+                comparingLeftPosition -= 1
             } else {
                 break
             }
-            listOfNumbers[position + 1] = tempValue
+            listOfNumbers[comparingLeftPosition + 1] = tempValue
         }
-        index++
+        traversingEndIndex++
     }
 }
