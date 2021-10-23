@@ -14,6 +14,15 @@ private fun main() {
     val insertionSortedList = mutableListOf(4, 6, 2, 5, 7, 6, 3, 7, 6, 9)
     insertionSort(insertionSortedList)
     println(insertionSortedList)
+
+    val on2greatestNumber = on2GreatestNumber(mutableListOf(4, 6, 2, 5, 7, 6, 3, 7, 6, 9))
+    println(on2greatestNumber.toString())
+
+    val onLogNGreatestNumber = onLogNGreatestNumber(mutableListOf(4, 6, 2, 5, 7, 6, 3, 7, 6, 9))
+    println(onLogNGreatestNumber.toString())
+
+    val onGreatestNumber = onGreatestNumber(mutableListOf(4, 6, 2, 5, 7, 6, 3, 7, 6, 9))
+    println(onGreatestNumber.toString())
 }
 
 private fun sortAndReturnGreatestProduct(listOfNumbers: MutableList<Int>): Int {
@@ -170,5 +179,50 @@ private fun insertionSort(listOfNumbers: MutableList<Int>) {
             listOfNumbers[comparingLeftIndex + 1] = currentValue
         }
         traversingEndIndex++
+    }
+}
+
+private fun on2GreatestNumber(listOfNumbers: MutableList<Int>) : Int {
+    if (listOfNumbers.isEmpty()) {
+        return 0
+    } else {
+        var isGreatestNumber: Boolean
+        listOfNumbers.forEachIndexed { index, _ ->
+            isGreatestNumber = true
+
+            listOfNumbers.forEachIndexed { innerIndex, _ ->
+                if (listOfNumbers[innerIndex] > listOfNumbers[index]) {
+                    isGreatestNumber = false
+                }
+            }
+
+            if (isGreatestNumber) {
+                return listOfNumbers[index]
+            }
+        }
+    }
+    return -1
+}
+
+private fun onLogNGreatestNumber(listOfNumbers: MutableList<Int>) : Int {
+    return if (listOfNumbers.isEmpty()) {
+        0
+    } else {
+        listOfNumbers.sort()
+        listOfNumbers.last()
+    }
+}
+
+private fun onGreatestNumber(listOfNumbers: MutableList<Int>) : Int {
+    return if (listOfNumbers.isEmpty()) {
+        0
+    } else {
+        var greatestNumber = listOfNumbers[0]
+        listOfNumbers.forEach { currentNumber ->
+            if (currentNumber > greatestNumber) {
+                greatestNumber = currentNumber
+            }
+        }
+        greatestNumber
     }
 }
