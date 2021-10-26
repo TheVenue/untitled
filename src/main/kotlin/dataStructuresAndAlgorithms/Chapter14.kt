@@ -21,6 +21,9 @@ private fun main() {
 
     val reversedLinkedList = linkedList.reverseList()
     println(reversedLinkedList?.printNodes())
+
+    linkedList.deleteGivenNode(node2)
+    println(linkedList.printNodes())
 }
 
 private class Node(var data: String?) {
