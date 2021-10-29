@@ -62,21 +62,21 @@ private fun bubbleSort(listOfNumbers: MutableList<Int>) {
  * Time Complexity of O(N²)
  */
 private fun selectionSort(listOfNumbers: MutableList<Int>) {
-    listOfNumbers.forEachIndexed { i, _ ->
-        var lowestNumberIndex = i
-        var j = i + 1
+    listOfNumbers.forEachIndexed { comparingIndex, _ ->
+        var indexOfLowest = comparingIndex
+        var nextIndex = comparingIndex + 1
 
-        while (j < listOfNumbers.size) {
-            if (listOfNumbers[j] < listOfNumbers[lowestNumberIndex]) {
-                lowestNumberIndex = j
+        while (nextIndex < listOfNumbers.size) {
+            if (listOfNumbers[nextIndex] < listOfNumbers[indexOfLowest]) {
+                indexOfLowest = nextIndex
             }
-            j++
+            nextIndex++
         }
 
-        if (lowestNumberIndex != i) {
-            val temp = listOfNumbers[i]
-            listOfNumbers[i] = listOfNumbers[lowestNumberIndex]
-            listOfNumbers[lowestNumberIndex] = temp
+        if (indexOfLowest != comparingIndex) {
+            val temp = listOfNumbers[comparingIndex]
+            listOfNumbers[comparingIndex] = listOfNumbers[indexOfLowest]
+            listOfNumbers[indexOfLowest] = temp
         }
     }
 }

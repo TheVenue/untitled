@@ -20,7 +20,7 @@ private fun main() {
 //    println(linkedList.getLastNode()?.data)
 
     val reversedLinkedList = linkedList.reverseList()
-    println(reversedLinkedList?.printNodes())
+    println(reversedLinkedList.printNodes())
 
     linkedList.deleteGivenNode(node2)
     println(linkedList.printNodes())
@@ -65,7 +65,7 @@ private class LinkedList(private val firstNode: Node) {
      * 4 nextNode is now 3
      * 4. Call the function on the sub-problem and watch what happens.
      */
-    fun reverseList() : LinkedList? {
+    fun reverseList() : LinkedList {
         var previousNode: Node? = null
         var currentNode: Node? = firstNode
 
