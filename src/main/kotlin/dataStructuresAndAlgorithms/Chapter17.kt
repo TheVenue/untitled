@@ -5,7 +5,7 @@ private fun main() {
     trie.insert("cat")
     trie.insert("catnip")
     trie.insert("catnap")
-    trie.autocorrect("catnar")
+    println(trie.autocorrect("catnar"))
 }
 
 private class TrieNode(val children: MutableMap<String, TrieNode?> = mutableMapOf())
